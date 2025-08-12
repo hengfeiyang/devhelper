@@ -1,6 +1,6 @@
 # DevHelper
 
-A native macOS application for developers, containing 11 essential tools commonly used in software development.
+A native macOS application for developers, containing 12 essential tools commonly used in software development.
 
 > This tool was 100% developed by `Claude Code`.
 
@@ -17,6 +17,7 @@ A native macOS application for developers, containing 11 essential tools commonl
 - **IP Query** - Discover your IP address and query geolocation data for any IP
 - **QR Code** - Generate QR codes with multiple sizes and error correction levels, scan QR codes from images
 - **Parquet Viewer** - Read and explore Parquet / arrow files with schema inspection and data export
+- **JWT encoder/decoder** - Encode and decode JSON web token
 
 ## Key Features
 
@@ -52,7 +53,7 @@ Current version: 1.8.3
 ![DevHelper Json Formater](./screenshots/json.png)
 
 #### Base64 Encode/Decode
-![DevHelper Json Formater](./screenshots/base64.png)
+![DevHelper Base64 encode](./screenshots/base64.png)
 
 #### URL Tools
 ![DevHelper Url Tools](./screenshots/url.png)
@@ -80,3 +81,6 @@ Http Request History
 
 Parquet data view
 ![DevHelper Paruqet data view](./screenshots/parquet_data.png)
+
+#### JWT Encoder/Decoder
+![DevHelper JWT encoder](./screenshots/jwt.png)

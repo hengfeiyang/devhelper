@@ -76,7 +76,7 @@ struct JWTView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("JWT Tools")
+            Text("JWT Encoder/Decoder")
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -87,7 +87,6 @@ struct JWTView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
-            .frame(width: 300)
             
             if selectedTab == .decode {
                 decodeView

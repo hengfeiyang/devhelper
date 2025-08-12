@@ -27,9 +27,9 @@
 		D5F4E8122C5A1B3000123456 /* ToolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4E8112C5A1B3000123456 /* ToolType.swift */; };
 		D5F4E8162C5A1B3000123456 /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F4E8172C5A1B3000123456 /* TextEditor.swift */; };
 		HTTP4E7F2C5A1B3000654321 /* HTTPRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = HTTP4E7F2C5A1B3000654322 /* HTTPRequestView.swift */; };
+		JWT4E8102C5A1B3000765432 /* JWTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = JWT4E8112C5A1B3000765432 /* JWTView.swift */; };
 		PQ3DE90A2C5A1B3000234567 /* ParquetViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PQ3DE9092C5A1B3000234567 /* ParquetViewerView.swift */; };
 		QR2CE8092C5A1B3000123456 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = QR2CE8082C5A1B3000123456 /* QRCodeView.swift */; };
-		JWT4E8102C5A1B3000765432 /* JWTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = JWT4E8112C5A1B3000765432 /* JWTView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,9 +65,9 @@
 		D5F4E8112C5A1B3000123456 /* ToolType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolType.swift; sourceTree = "<group>"; };
 		D5F4E8172C5A1B3000123456 /* TextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditor.swift; sourceTree = "<group>"; };
 		HTTP4E7F2C5A1B3000654322 /* HTTPRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestView.swift; sourceTree = "<group>"; };
+		JWT4E8112C5A1B3000765432 /* JWTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTView.swift; sourceTree = "<group>"; };
 		PQ3DE9092C5A1B3000234567 /* ParquetViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParquetViewerView.swift; sourceTree = "<group>"; };
 		QR2CE8082C5A1B3000123456 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
-		JWT4E8112C5A1B3000765432 /* JWTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,7 +405,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.3;
+				MARKETING_VERSION = 1.9.0;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp --options=runtime";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devhelper.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,7 +439,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.8.3;
+				MARKETING_VERSION = 1.9.0;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp --options=runtime";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devhelper.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

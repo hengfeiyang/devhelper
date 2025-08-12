@@ -56,7 +56,7 @@ enum ToolType: String, CaseIterable, Identifiable {
         case .parquetViewer:
             return "Parquet Viewer"
         case .jwt:
-            return "JWT Tools"
+            return "JWT Encoder/Decoder"
         }
     }
     
