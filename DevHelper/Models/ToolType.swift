@@ -27,6 +27,7 @@ enum ToolType: String, CaseIterable, Identifiable {
     case ipQuery = "ip"
     case qrCode = "qrcode"
     case parquetViewer = "parquet"
+    case jwt = "jwt"
     
     var id: String { rawValue }
     
@@ -54,6 +55,8 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "QR Code"
         case .parquetViewer:
             return "Parquet Viewer"
+        case .jwt:
+            return "JWT Tools"
         }
     }
     
@@ -81,6 +84,8 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "qrcode"
         case .parquetViewer:
             return "doc.text.magnifyingglass"
+        case .jwt:
+            return "key.horizontal"
         }
     }
 }
