@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9301315A2E4B1C5D00B838C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 930131592E4B1C5D00B838C3 /* FirebaseAnalytics */; };
 		930D8A442E3289B900D2DC16 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (Required, ); }; };
 		930D8A452E328B4B00D2DC16 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		935539782E477F9600A1BC3B /* Arrow in Frameworks */ = {isa = PBXBuildFile; productRef = 935539772E477F9600A1BC3B /* Arrow */; };
@@ -77,6 +78,7 @@
 			files = (
 				935539782E477F9600A1BC3B /* Arrow in Frameworks */,
 				930D8A442E3289B900D2DC16 /* CodeMirror-SwiftUI in Frameworks */,
+				9301315A2E4B1C5D00B838C3 /* FirebaseAnalytics in Frameworks */,
 				93F48DE72E442FBE007F279B /* DuckDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +210,7 @@
 				930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */,
 				93F48DE52E442FBE007F279B /* XCRemoteSwiftPackageReference "duckdb-swift" */,
 				935539762E477F9600A1BC3B /* XCRemoteSwiftPackageReference "arrow-swift" */,
+				930131582E4B1C5D00B838C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D5F4E7F12C5A1B2E00123456 /* Products */;
 			projectDirPath = "";
@@ -472,6 +475,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		930131582E4B1C5D00B838C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.0;
+			};
+		};
 		930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hengfeiyang/CodeMirror-SwiftUI";
@@ -499,6 +510,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		930131592E4B1C5D00B838C3 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 930131582E4B1C5D00B838C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */;

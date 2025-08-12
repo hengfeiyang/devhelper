@@ -14,9 +14,27 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAnalytics
 
 @main
 struct DevHelperApp: App {
+    init() {
+        // Configure Firebase with custom options to avoid WebKit
+        let options = FirebaseOptions(
+            googleAppID: "1:508874436485:ios:7cdddb663471f4497e9eec",
+            gcmSenderID: "508874436485"
+        )
+        options.apiKey = "AIzaSyBBRVbbWnmenyhD4z4nA2lLIU9vtXqVc2k"
+        options.projectID = "devhelper-29663"
+        options.storageBucket = "devhelper-29663.firebasestorage.app"
+        
+        FirebaseApp.configure(options: options)
+        
+        // Configure Analytics to avoid WebKit features
+        Analytics.setAnalyticsCollectionEnabled(true)
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
