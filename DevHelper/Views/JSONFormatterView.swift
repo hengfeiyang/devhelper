@@ -15,8 +15,10 @@
 
 import SwiftUI
 import AppKit
+import FirebaseAnalytics
 
 struct JSONFormatterView: View {
+    let screenName = "JSON Formatter"
     @State private var jsonInput: String = ""
     @State private var jsonInput2: String = ""
     @State private var jsonOutput: String = ""
@@ -26,7 +28,7 @@ struct JSONFormatterView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("JSON Formatter")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -251,6 +253,9 @@ struct JSONFormatterView: View {
         .padding()
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

@@ -15,8 +15,10 @@
 
 import SwiftUI
 import AppKit
+import FirebaseAnalytics
 
 struct IPQueryView: View {
+    let screenName = "IP Query"
     @State private var myIPAddress: String = ""
     @State private var myIPDetails: IPLocationInfo? = nil
     @State private var chinaIPAddress: String = ""
@@ -32,7 +34,7 @@ struct IPQueryView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("IP Query")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -224,6 +226,9 @@ struct IPQueryView: View {
         .padding()
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

@@ -14,8 +14,10 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import SwiftUI
+import FirebaseAnalytics
 
 struct UnitConverterView: View {
+    let screenName = "Unit Converter"
     @State private var selectedCategory: UnitCategory = .data
     @State private var fromUnit: String = ""
     @State private var toUnit: String = ""
@@ -24,7 +26,7 @@ struct UnitConverterView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Unit Converter")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -107,6 +109,9 @@ struct UnitConverterView: View {
         .padding()
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

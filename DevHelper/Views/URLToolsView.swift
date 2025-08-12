@@ -15,8 +15,10 @@
 
 import SwiftUI
 import AppKit
+import FirebaseAnalytics
 
 struct URLToolsView: View {
+    let screenName = "URL Tools"
     @State private var selectedTab: URLTab = .encoder
     @State private var textInput: String = ""
     @State private var encodedOutput: String = ""
@@ -29,7 +31,7 @@ struct URLToolsView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("URL Tools")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -56,6 +58,9 @@ struct URLToolsView: View {
         .padding()
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

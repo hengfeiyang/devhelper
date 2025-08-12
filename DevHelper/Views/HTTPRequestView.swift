@@ -17,8 +17,10 @@ import SwiftUI
 import AppKit
 import Foundation
 import Combine
+import FirebaseAnalytics
 
 struct HTTPRequestView: View {
+    let screenName = "HTTP Request"
     @State private var httpMethod: HTTPMethod = .GET
     @State private var urlInput: String = ""
     @State private var headers: [HTTPHeader] = [HTTPHeader()]
@@ -50,7 +52,7 @@ struct HTTPRequestView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("HTTP Request")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -236,6 +238,9 @@ struct HTTPRequestView: View {
         .onAppear {
             setupURLSession()
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

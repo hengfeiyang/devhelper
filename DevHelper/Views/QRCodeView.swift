@@ -20,6 +20,7 @@ import CoreImage.CIFilterBuiltins
 import AVFoundation
 import Vision
 import UniformTypeIdentifiers
+import FirebaseAnalytics
 
 enum QRCodeTab: String, CaseIterable {
     case generate = "generate"
@@ -89,6 +90,7 @@ enum QRCodeSize: String, CaseIterable {
 }
 
 struct QRCodeView: View {
+    let screenName = "QR Code"
     @State private var inputText: String = ""
     @State private var qrCodeImage: NSImage?
     @State private var scanResult: String = ""
@@ -104,7 +106,7 @@ struct QRCodeView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("QR Code")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -138,6 +140,11 @@ struct QRCodeView: View {
             if qrCodeSize == .custom {
                 generateQRCode()
             }
+        }
+        .onAppear {
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
     }
     

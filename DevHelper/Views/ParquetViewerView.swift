@@ -19,6 +19,7 @@ import AppKit
 import DuckDB
 import Arrow
 import FlatBuffers
+import FirebaseAnalytics
 
 // Data row structure for Table view
 struct ParquetRow: Identifiable {
@@ -52,6 +53,7 @@ enum FileType {
 }
 
 struct ParquetViewerView: View {
+    let screenName = "Parquet Viewer"
     @State private var selectedTab = "schema"
     @State private var fileURL: URL?
     @State private var fileName: String = ""
@@ -89,7 +91,7 @@ struct ParquetViewerView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Parquet Viewer")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -187,7 +189,11 @@ struct ParquetViewerView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        
+        .onAppear {
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
+        }
     }
     
     @ViewBuilder

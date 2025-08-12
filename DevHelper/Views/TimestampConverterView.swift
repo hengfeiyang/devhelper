@@ -15,8 +15,10 @@
 
 import SwiftUI
 import AppKit
+import FirebaseAnalytics
 
 struct TimestampConverterView: View {
+    let screenName = "Timestamp Converter"
     @State private var timestampInput: String = ""
     @State private var dateInput: String = ""
     @State private var convertedDate: String = ""
@@ -26,7 +28,7 @@ struct TimestampConverterView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Timestamp Converter")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -124,6 +126,9 @@ struct TimestampConverterView: View {
         .padding()
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

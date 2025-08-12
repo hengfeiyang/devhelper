@@ -15,8 +15,10 @@
 
 import SwiftUI
 import AppKit
+import FirebaseAnalytics
 
 struct Base64View: View {
+    let screenName = "Base64 Encode/Decode"
     @State private var textInput: String = ""
     @State private var base64Output: String = ""
     @State private var base64Input: String = ""
@@ -27,7 +29,7 @@ struct Base64View: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Base64 Encoder/Decoder")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -228,6 +230,9 @@ struct Base64View: View {
         }
         .onAppear {
             loadState()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
         .onDisappear {
             saveState()

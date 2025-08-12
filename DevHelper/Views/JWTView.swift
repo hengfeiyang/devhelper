@@ -17,6 +17,7 @@ import SwiftUI
 import AppKit
 import CryptoKit
 import Foundation
+import FirebaseAnalytics
 
 enum JWTTab: String, CaseIterable {
     case encode = "encode"
@@ -44,6 +45,7 @@ enum JWTAlgorithm: String, CaseIterable {
 }
 
 struct JWTView: View {
+    let screenName = "JWT Encoder/Decoder"
     @State private var selectedTab: JWTTab = .decode
     @State private var jwtToken: String = ""
     @State private var headerText: String = ""
@@ -76,7 +78,7 @@ struct JWTView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("JWT Encoder/Decoder")
+            Text(screenName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
@@ -262,6 +264,9 @@ struct JWTView: View {
                 payloadText = defaultPayload
             }
             encodeJWT()
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: screenName
+            ])
         }
     }
     
