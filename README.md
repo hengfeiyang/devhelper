@@ -1,6 +1,6 @@
 # DevHelper
 
-A native macOS application for developers, containing 12 essential tools commonly used in software development.
+A native macOS application for developers, containing 14 essential tools commonly used in software development.
 
 > This tool was 100% developed by `Claude Code`.
 
@@ -9,7 +9,10 @@ A native macOS application for developers, containing 12 essential tools commonl
 - **Timestamp Converter** - Convert between timestamps and human-readable dates with multiple format support
 - **Unit Converter** - Convert between different units (Data, Time, Length, Weight, Temperature, Area, Volume)
 - **JSON Formatter** - Format, validate, and compare JSON data with diff view
+- **SQL Formatter** - Format and minify SQL queries with syntax validation
+- **HTML Formatter** - Format and minify HTML with proper tag indentation
 - **Base64 Encode/Decode** - Encode and decode Base64 strings
+- **JWT Encoder/Decoder** - Encode and decode JSON Web Tokens with HMAC signature support
 - **Regex Test** - Test regular expressions with pattern matching
 - **UUID Generator** - Generate UUIDs in various formats including v7 with timestamp extraction
 - **URL Tools** - URL encoding/decoding and parsing
@@ -39,7 +42,7 @@ A native macOS application for developers, containing 12 essential tools commonl
 
 ## Version
 
-Current version: 1.8.3
+Current version: 1.10.0
 
 ## Screenshots
 

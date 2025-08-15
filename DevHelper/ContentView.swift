@@ -80,8 +80,14 @@ struct ContentView: View {
                     UnitConverterView()
                 case .jsonFormatter:
                     JSONFormatterView()
+                case .sqlFormatter:
+                    SQLFormatterView()
+                case .htmlFormatter:
+                    HTMLFormatterView()
                 case .base64:
                     Base64View()
+                case .jwt:
+                    JWTView()
                 case .regexTest:
                     RegexTestView()
                 case .uuidGenerator:
@@ -96,8 +102,6 @@ struct ContentView: View {
                     QRCodeView()
                 case .parquetViewer:
                     ParquetViewerView()
-                case .jwt:
-                    JWTView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

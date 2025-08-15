@@ -3,7 +3,7 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-DevHelper is a native macOS application built with SwiftUI that provides essential developer utilities in a single, unified interface. The app contains 11 fully-functional tools commonly used by developers, with search functionality and modern UI design. Version 1.8.3 released.
+DevHelper is a native macOS application built with SwiftUI that provides essential developer utilities in a single, unified interface. The app contains 14 fully-functional tools commonly used by developers, with search functionality and modern UI design. Version 1.9.0 released.
 
 ## Tools Implemented
 
@@ -66,7 +66,26 @@ DevHelper is a native macOS application built with SwiftUI that provides essenti
 - **Generation**: Real-time QR code creation, copy to clipboard, save to file with proper entitlements, dynamic sizing with pixel indicators
 - **Scanning**: File selection, clipboard paste, image preview with scan results, automatic URL recognition
 
-### 11. Parquet Viewer (`ParquetViewerView.swift`)
+### 11. SQL Formatter (`SQLFormatterView.swift`)
+- **Status**: ✅ Complete
+- **Features**: SQL formatting (pretty print), minification, basic syntax validation, support for common SQL statements
+- **UI**: Two-column layout with mode selection (Format/Minify), real-time processing
+- **Recent Updates**: Added comprehensive SQL formatting with proper indentation and keyword highlighting
+
+### 12. HTML Formatter (`HTMLFormatterView.swift`)
+- **Status**: ✅ Complete
+- **Features**: HTML formatting (pretty print), minification, basic syntax validation, proper tag indentation
+- **UI**: Two-column layout with mode selection (Format/Minify), real-time processing
+- **Recent Updates**: Added HTML formatting with proper tag structure and indentation
+
+### 13. JWT Encoder/Decoder (`JWTView.swift`)
+- **Status**: ✅ Complete
+- **Features**: JWT token decoding with header/payload extraction, JWT encoding with HMAC algorithms (HS256/HS384/HS512), signature verification, custom claims support
+- **UI**: Tabbed interface (Encode/Decode), comprehensive JWT token analysis, algorithm selection
+- **Recent Updates**: Added JWT processing with multiple HMAC algorithms and signature validation
+- **Security**: Uses CryptoKit for secure HMAC operations
+
+### 14. Parquet Viewer (`ParquetViewerView.swift`)
 - **Status**: ✅ Complete - Full DuckDB integration
 - **Features**: Complete Parquet file reading using DuckDB Swift library, schema extraction, data preview, metadata display
 - **UI**: Tabbed interface (Data/Schema/Metadata), native SwiftUI table with fixed column widths, schema table with column_name/data_type/nullable columns
@@ -88,16 +107,19 @@ DevHelper/
 │   ├── ContentView.swift           # Navigation split view
 │   ├── Models/
 │   │   └── ToolType.swift          # Tool definitions
-│   ├── Views/                      # All 11 tool implementations
+│   ├── Views/                      # All 14 tool implementations
 │   │   ├── TimestampConverterView.swift
 │   │   ├── UnitConverterView.swift
 │   │   ├── JSONFormatterView.swift
+│   │   ├── SQLFormatterView.swift
+│   │   ├── HTMLFormatterView.swift
 │   │   ├── Base64View.swift
-│   │   ├── UUIDGeneratorView.swift
+│   │   ├── JWTView.swift
 │   │   ├── URLToolsView.swift
 │   │   ├── RegexTestView.swift
-│   │   ├── IPQueryView.swift
+│   │   ├── UUIDGeneratorView.swift
 │   │   ├── HTTPRequestView.swift
+│   │   ├── IPQueryView.swift
 │   │   ├── QRCodeView.swift
 │   │   └── ParquetViewerView.swift
 │   ├── Components/                 # Shared UI components
@@ -155,22 +177,41 @@ DevHelper/
 - **CoreImage**: QR code generation with CIFilter.qrCodeGenerator()
 - **Vision**: QR code scanning with VNDetectBarcodesRequest
 - **UniformTypeIdentifiers**: Modern file type handling for save dialogs
+- **CryptoKit**: JWT HMAC signature generation and verification
 
 #### Swift Package Manager Dependencies
 - **DuckDB**: Swift package for Parquet file reading (branch: v1.4.0-dev1354)
 - **Arrow**: Apache Arrow Swift implementation (v21.0.0)
 - **CodeMirror-SwiftUI**: Code editor integration (github.com/hengfeiyang/CodeMirror-SwiftUI)
 
-## Recent Updates (Version 1.8+)
+## Recent Updates (Version 1.9+)
 
-### Latest Features (Version 1.8+)
+### Latest Features (Version 1.9+)
+- **SQL Formatter Tool**: Complete SQL formatting and minification functionality
+  - **SQL Formatting**: Pretty print SQL with proper indentation and keyword highlighting
+  - **Minification**: Compress SQL by removing unnecessary whitespace
+  - **Syntax Validation**: Basic SQL syntax checking with error reporting
+  - **Real-time Processing**: Instant formatting as user types or pastes content
+- **HTML Formatter Tool**: Comprehensive HTML formatting and minification
+  - **HTML Formatting**: Pretty print HTML with proper tag indentation and structure
+  - **Minification**: Compress HTML by removing unnecessary whitespace and formatting
+  - **Syntax Validation**: Basic HTML structure validation
+  - **Real-time Processing**: Instant formatting with live preview
+- **JWT Encoder/Decoder Tool**: Full JWT token processing capabilities
+  - **JWT Decoding**: Extract and display header, payload, and signature information
+  - **JWT Encoding**: Create JWT tokens with custom claims and HMAC algorithms
+  - **Algorithm Support**: HS256, HS384, HS512, and none algorithms
+  - **Signature Verification**: Validate JWT signatures using provided secret keys
+  - **Security Integration**: Uses CryptoKit for secure HMAC operations
+
+### Previous Features (Version 1.8)
 - **Parquet Viewer Tool**: Complete Parquet file reading with DuckDB integration
   - **Full Data Reading**: Uses DuckDB Swift library to read actual Parquet data
   - **Schema Table View**: Displays columns with name, data type, and nullable status
   - **Data Preview**: Native SwiftUI table with proper column alignment (150px fixed width)
   - **Export Options**: Both CSV and JSON export for data and schema
   - **Metadata Display**: File metadata via `parquet_file_metadata()` and key-value metadata via `parquet_kv_metadata()`
-  - **Time Unit Converter**: Added Time category with conversions from nanoseconds to years
+- **Time Unit Converter**: Added Time category with conversions from nanoseconds to years
 
 ### Previous Features (Version 1.7)
 - **QR Code Tool**: Comprehensive QR code generation and scanning functionality
@@ -346,7 +387,7 @@ swiftlint lint --path DevHelper/
 - **README**: `README.md` contains user-facing project information
 
 ## Success Metrics
-- ✅ All 11 essential tools fully implemented
+- ✅ All 14 essential tools fully implemented
 - ✅ Consistent UI/UX across all tools
 - ✅ Real-time processing and feedback
 - ✅ Professional macOS native experience
@@ -356,12 +397,17 @@ swiftlint lint --path DevHelper/
 - ✅ Selectable text in results areas
 - ✅ File save/load operations with proper entitlements
 - ✅ Streamlined feature set focused on core developer needs
+- ✅ Security-focused implementations (JWT with CryptoKit)
+- ✅ Code formatting capabilities (SQL, HTML, JSON)
 
 ---
 
-**Last Updated**: Version 1.8.3 improve UITableView.
+**Last Updated**: Version 1.9.0 with new formatter tools.
 **Latest Additions**: 
+- SQL Formatter tool with formatting, minification, and syntax validation
+- HTML Formatter tool with pretty printing and minification capabilities
+- JWT Encoder/Decoder tool with HMAC algorithms and signature verification
+- Enhanced security with CryptoKit integration for JWT processing
 - Full Parquet file reading with DuckDB integration, schema/data/metadata display with export options
-- Time category in Unit Converter with comprehensive time unit conversions
 - CodeMirror integration for enhanced code editing capabilities
-**Architecture**: SwiftUI with DuckDB, Arrow, and CodeMirror-SwiftUI packages.
+**Architecture**: SwiftUI with DuckDB, Arrow, CodeMirror-SwiftUI, and CryptoKit frameworks.

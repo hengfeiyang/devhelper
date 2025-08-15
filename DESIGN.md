@@ -16,16 +16,19 @@ DevHelper/
 │   ├── ContentView.swift           # Navigation split view
 │   ├── Models/
 │   │   └── ToolType.swift          # Tool definitions
-│   ├── Views/                      # All 11 tool implementations
+│   ├── Views/                      # All 14 tool implementations
 │   │   ├── TimestampConverterView.swift
 │   │   ├── UnitConverterView.swift
 │   │   ├── JSONFormatterView.swift
+│   │   ├── SQLFormatterView.swift
+│   │   ├── HTMLFormatterView.swift
 │   │   ├── Base64View.swift
-│   │   ├── UUIDGeneratorView.swift
+│   │   ├── JWTView.swift
 │   │   ├── URLToolsView.swift
 │   │   ├── RegexTestView.swift
-│   │   ├── IPQueryView.swift
+│   │   ├── UUIDGeneratorView.swift
 │   │   ├── HTTPRequestView.swift
+│   │   ├── IPQueryView.swift
 │   │   ├── QRCodeView.swift
 │   │   └── ParquetViewerView.swift
 │   ├── Components/                 # Shared UI components
@@ -324,7 +327,87 @@ Each tool follows a consistent pattern:
 - Real-time UI updates using `onChange` modifiers
 - Error handling for image processing and file operations
 
-### 11. Parquet Viewer
+### 11. SQL Formatter
+**File**: `SQLFormatterView.swift`
+
+**Features**:
+- SQL formatting with proper indentation and keyword highlighting
+- SQL minification by removing unnecessary whitespace
+- Basic syntax validation with error reporting
+- Real-time processing as user types
+- Support for common SQL statements (SELECT, INSERT, UPDATE, DELETE, etc.)
+- Copy functionality for formatted results
+
+**UI Components**:
+- Segmented picker for mode selection (Format/Minify)
+- Two-column layout (input/output) with arrow indicator
+- Sample SQL buttons for quick testing
+- Validation status indicator with error messages
+- Character count display for input/output
+
+**Implementation Details**:
+- Custom SQL formatter with keyword recognition
+- Indentation logic for nested queries and clauses
+- Basic syntax validation using string parsing
+- Real-time processing with input validation
+- Error handling with descriptive feedback
+
+### 12. HTML Formatter
+**File**: `HTMLFormatterView.swift`
+
+**Features**:
+- HTML formatting with proper tag indentation and structure
+- HTML minification by removing unnecessary whitespace
+- Basic syntax validation with error reporting
+- Real-time processing as user types
+- Support for all standard HTML elements
+- Copy functionality for formatted results
+
+**UI Components**:
+- Segmented picker for mode selection (Format/Minify)
+- Two-column layout (input/output) with arrow indicator
+- Sample HTML buttons for quick testing
+- Validation status indicator with error messages
+- Character count display for input/output
+
+**Implementation Details**:
+- Custom HTML formatter with tag recognition
+- Proper indentation logic for nested elements
+- Basic syntax validation using XML/HTML parsing principles
+- Real-time processing with input validation
+- Error handling with descriptive feedback
+
+### 13. JWT Encoder/Decoder
+**File**: `JWTView.swift`
+
+**Features**:
+- JWT token decoding with header and payload extraction
+- JWT token encoding with custom claims support
+- HMAC signature verification and generation
+- Algorithm support (HS256, HS384, HS512, none)
+- Base64URL encoding/decoding for JWT components
+- Real-time processing and validation
+- Sample JWT tokens for testing
+
+**UI Components**:
+- Tabbed interface (Encode/Decode)
+- JWT token input/output areas
+- Header and payload display sections
+- Algorithm picker for encoding
+- Secret key input for HMAC algorithms
+- Signature verification status indicator
+- Copy functionality throughout
+
+**Implementation Details**:
+- Uses `CryptoKit` for HMAC signature generation
+- Base64URL encoding/decoding functions
+- JSON parsing for header and payload
+- Real-time JWT validation and parsing
+- Support for common JWT claims (iss, sub, aud, exp, etc.)
+- Error handling for malformed tokens
+- Secure key handling for signature operations
+
+### 14. Parquet Viewer
 **File**: `ParquetViewerView.swift`
 
 **Features**:
@@ -387,8 +470,9 @@ Each tool follows a consistent pattern:
 ```swift
 enum ToolType: String, CaseIterable, Identifiable {
     case timestampConverter, unitConverter, jsonFormatter, 
-         base64, regexTest, uuidGenerator, urlTools, ipQuery, 
-         httpRequest, qrCode, parquetViewer
+         sqlFormatter, htmlFormatter, base64, jwt, 
+         urlTools, regexTest, uuidGenerator, httpRequest, 
+         ipQuery, qrCode, parquetViewer
     
     var title: String { /* Display names */ }
     var iconName: String { /* SF Symbols */ }
@@ -398,7 +482,10 @@ enum ToolType: String, CaseIterable, Identifiable {
 ### Supporting Models
 - `UnitCategory` and `UnitData` for unit conversions
 - `JSONMode` for JSON operations
+- `SQLMode` for SQL formatting operations
+- `HTMLMode` for HTML formatting operations
 - `Base64Tab` for encoding modes
+- `JWTTab` and `JWTAlgorithm` for JWT operations
 - `UUIDVersion` and `UUIDFormat` for UUID options
 - `URLTab` for URL tool modes
 - `IPLocationInfo` and `BaiduIPInfo` for IP geolocation data
@@ -412,7 +499,7 @@ enum ToolType: String, CaseIterable, Identifiable {
 ### Target Settings
 - **Minimum macOS**: 14.0
 - **Bundle Identifier**: com.devhelper.DevHelper
-- **Version**: 1.8.3 (Build 1)
+- **Version**: 1.9.0 (Build 1)
 - **Swift Version**: 5.0
 - **App Sandbox**: Enabled
 - **Hardened Runtime**: Enabled
@@ -429,6 +516,7 @@ enum ToolType: String, CaseIterable, Identifiable {
 - **CoreImage**: QR code generation with CIFilter
 - **Vision**: QR code scanning with VNDetectBarcodesRequest
 - **UniformTypeIdentifiers**: Modern file type handling
+- **CryptoKit**: JWT HMAC signature generation and verification
 
 #### Swift Package Manager Dependencies
 - **DuckDB**: Swift package for Parquet file reading (branch: v1.4.0-dev1354)

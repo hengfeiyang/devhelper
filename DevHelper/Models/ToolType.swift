@@ -19,7 +19,10 @@ enum ToolType: String, CaseIterable, Identifiable {
     case timestampConverter = "timestamp"
     case unitConverter = "unit"
     case jsonFormatter = "json"
+    case sqlFormatter = "sql"
+    case htmlFormatter = "html"
     case base64 = "base64"
+    case jwt = "jwt"
     case urlTools = "url"
     case regexTest = "regex"
     case uuidGenerator = "uuid"
@@ -27,7 +30,6 @@ enum ToolType: String, CaseIterable, Identifiable {
     case ipQuery = "ip"
     case qrCode = "qrcode"
     case parquetViewer = "parquet"
-    case jwt = "jwt"
     
     var id: String { rawValue }
     
@@ -39,8 +41,14 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "Unit Converter"
         case .jsonFormatter:
             return "JSON Formatter"
+        case .sqlFormatter:
+            return "SQL Formatter"
+        case .htmlFormatter:
+            return "HTML Formatter"
         case .base64:
             return "Base64 Encode/Decode"
+        case .jwt:
+            return "JWT Encoder/Decoder"
         case .urlTools:
             return "URL Tools"
         case .regexTest:
@@ -55,8 +63,6 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "QR Code"
         case .parquetViewer:
             return "Parquet Viewer"
-        case .jwt:
-            return "JWT Encoder/Decoder"
         }
     }
     
@@ -68,8 +74,14 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "scalemass"
         case .jsonFormatter:
             return "doc.text"
+        case .sqlFormatter:
+            return "cylinder.split.1x2"
+        case .htmlFormatter:
+            return "chevron.left.forwardslash.chevron.right"
         case .base64:
             return "6.circle"
+        case .jwt:
+            return "key.horizontal"
         case .urlTools:
             return "link"
         case .regexTest:
@@ -84,8 +96,6 @@ enum ToolType: String, CaseIterable, Identifiable {
             return "qrcode"
         case .parquetViewer:
             return "doc.text.magnifyingglass"
-        case .jwt:
-            return "key.horizontal"
         }
     }
 }
