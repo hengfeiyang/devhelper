@@ -18,5 +18,7 @@
 	<false/>
 	<key>com.apple.security.cs.disable-executable-page-protection</key>
 	<false/>
+	<key>com.apple.developer.appintents-supported</key>
+	<true/>
 </dict>
 </plist>

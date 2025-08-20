@@ -16,6 +16,7 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAnalytics
+import AppIntents
 
 @main
 struct DevHelperApp: App {

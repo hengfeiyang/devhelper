@@ -33,6 +33,8 @@
 		PQ3DE90A2C5A1B3000234567 /* ParquetViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = PQ3DE9092C5A1B3000234567 /* ParquetViewerView.swift */; };
 		QR2CE8092C5A1B3000123456 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = QR2CE8082C5A1B3000123456 /* QRCodeView.swift */; };
 		SQL8E8092C5A1B3000123457 /* SQLFormatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = SQL8E8082C5A1B3000123457 /* SQLFormatterView.swift */; };
+		TCI4F7812C5A1B3000987654 /* TimestampConversionIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = TCI4F7822C5A1B3000987654 /* TimestampConversionIntent.swift */; };
+		TSE4F7812C5A1B3000876543 /* TimestampEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = TSE4F7822C5A1B3000876543 /* TimestampEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +75,8 @@
 		PQ3DE9092C5A1B3000234567 /* ParquetViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParquetViewerView.swift; sourceTree = "<group>"; };
 		QR2CE8082C5A1B3000123456 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		SQL8E8082C5A1B3000123457 /* SQLFormatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLFormatterView.swift; sourceTree = "<group>"; };
+		TCI4F7822C5A1B3000987654 /* TimestampConversionIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampConversionIntent.swift; sourceTree = "<group>"; };
+		TSE4F7822C5A1B3000876543 /* TimestampEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				D5F4E8112C5A1B3000123456 /* ToolType.swift */,
+				TSE4F7822C5A1B3000876543 /* TimestampEntity.swift */,
+				TCI4F7822C5A1B3000987654 /* TimestampConversionIntent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 				HTML8E8092C5A1B3000123456 /* HTMLFormatterView.swift in Sources */,
 				SQL8E8092C5A1B3000123457 /* SQLFormatterView.swift in Sources */,
 				JWT4E8102C5A1B3000765432 /* JWTView.swift in Sources */,
+				TSE4F7812C5A1B3000876543 /* TimestampEntity.swift in Sources */,
+				TCI4F7812C5A1B3000987654 /* TimestampConversionIntent.swift in Sources */,
 				D5F4E7F62C5A1B2E00123456 /* ContentView.swift in Sources */,
 				D5F4E7F42C5A1B2E00123456 /* DevHelperApp.swift in Sources */,
 			);
