@@ -95,7 +95,7 @@ struct Base64View: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                         
                         Text("\(base64Output.count) characters")
@@ -153,7 +153,7 @@ struct Base64View: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                         
                         Text("\(decodedOutput.count) characters")

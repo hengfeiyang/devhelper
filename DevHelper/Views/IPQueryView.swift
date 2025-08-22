@@ -119,7 +119,7 @@ struct IPQueryView: View {
                             }
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color(NSColor.controlBackgroundColor))
+                            .background(AppConstants.controlBackground)
                             .cornerRadius(10)
                         }
                     }
@@ -214,7 +214,7 @@ struct IPQueryView: View {
                             }
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color(NSColor.controlBackgroundColor))
+                            .background(AppConstants.controlBackground)
                             .cornerRadius(10)
                         }
                         

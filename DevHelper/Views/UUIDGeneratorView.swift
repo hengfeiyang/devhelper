@@ -102,7 +102,7 @@ struct UUIDGeneratorView: View {
                                 }
                                 .padding(.horizontal, 5)
                                 .padding(.vertical, 2)
-                                .background(Color.gray.opacity(0.1))
+                                .background(AppConstants.lightGrayBackground)
                                 .cornerRadius(4)
                             }
                         }
@@ -133,7 +133,7 @@ struct UUIDGeneratorView: View {
                         Text(validationResult.isEmpty ? "Validation result will appear here" : validationResult)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                             .textSelection(.enabled)
                     }

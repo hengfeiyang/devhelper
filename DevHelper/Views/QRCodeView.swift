@@ -249,7 +249,7 @@ struct QRCodeView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: qrCodeSize.displaySize, height: qrCodeSize.displaySize)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                         
                         Text("\(Int(getCurrentPixelSize()))x\(Int(getCurrentPixelSize())) px")
@@ -272,13 +272,13 @@ struct QRCodeView: View {
                     Text(errorMessage)
                         .foregroundColor(.red)
                         .frame(width: qrCodeSize.displaySize, height: qrCodeSize.displaySize)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                 } else {
                     Rectangle()
-                        .fill(Color.gray.opacity(0.1))
+                        .fill(AppConstants.lightGrayBackground)
                         .frame(width: qrCodeSize.displaySize, height: qrCodeSize.displaySize)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                         .overlay(
                             Text("Enter text to generate QR code")
@@ -327,13 +327,13 @@ struct QRCodeView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 256, maxHeight: 256)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                     } else {
                         Rectangle()
-                            .fill(Color.gray.opacity(0.1))
+                            .fill(AppConstants.lightGrayBackground)
                             .frame(maxWidth: 256, maxHeight: 256)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                             .overlay(
                                 Text("No image selected")
@@ -366,7 +366,7 @@ struct QRCodeView: View {
                             }
                             .frame(height: 250)
                             .frame(maxWidth: .infinity)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                             
                             HStack {
@@ -393,14 +393,14 @@ struct QRCodeView: View {
                             .frame(height: 250)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(10)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                     } else {
                         Rectangle()
-                            .fill(Color.gray.opacity(0.1))
+                            .fill(AppConstants.lightGrayBackground)
                             .frame(height: 250)
                             .frame(maxWidth: .infinity)
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                             .overlay(
                                 Text("Select an image to scan QR code")

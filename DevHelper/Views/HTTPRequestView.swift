@@ -114,7 +114,7 @@ struct HTTPRequestView: View {
                         Toggle("Skip TLS Verify", isOn: $skipTLSVerify)
 
                         HStack {
-                            Text("Timeout:")
+                            Text("Timeout")
                             TextField("30", value: $timeout, format: .number)
                                 .textFieldStyle(.roundedBorder)
                                 .frame(width: 50)
@@ -187,7 +187,7 @@ struct HTTPRequestView: View {
                         }
                         .padding(.horizontal, 2)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(NSColor.controlBackgroundColor))
+                        .background(AppConstants.controlBackground)
                         .cornerRadius(10)
                     } else {
                         // Response content
@@ -209,7 +209,7 @@ struct HTTPRequestView: View {
                                 } else {
                                     Text("Response will appear here")
                                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                                        .background(Color(NSColor.controlBackgroundColor))
+                                        .background(AppConstants.controlBackground)
                                         .cornerRadius(10)
                                 }
                             }
@@ -225,7 +225,7 @@ struct HTTPRequestView: View {
                                         .foregroundColor(.secondary)
                                 }
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                .background(Color(NSColor.controlBackgroundColor).opacity(0.8))
+                                .background(AppConstants.controlBackground.opacity(0.8))
                                 .cornerRadius(10)
                             }
                         }
@@ -459,7 +459,7 @@ struct HTTPRequestView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(5)
                             }
-                            .background(Color(NSColor.controlBackgroundColor))
+                            .background(AppConstants.controlBackground)
                             .cornerRadius(8)
                             .frame(maxHeight: .infinity)
                         } else {
@@ -475,7 +475,7 @@ struct HTTPRequestView: View {
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(5)
                                 }
-                                .background(Color(NSColor.controlBackgroundColor))
+                                .background(AppConstants.controlBackground)
                                 .cornerRadius(8)
                                 .frame(maxHeight: .infinity)
                             }
@@ -518,7 +518,7 @@ struct HTTPRequestView: View {
                         }
                         .padding()
                     }
-                    .background(Color(NSColor.controlBackgroundColor))
+                    .background(AppConstants.controlBackground)
                     .cornerRadius(8)
                     .frame(maxHeight: .infinity)
                 }
@@ -832,7 +832,7 @@ struct HTTPRequestView: View {
             .help("Replay Request")
         }
         .padding(4)
-        .background(Color(NSColor.controlBackgroundColor))
+        .background(AppConstants.controlBackground)
         .cornerRadius(6)
         .onTapGesture {
             replayRequest(item)

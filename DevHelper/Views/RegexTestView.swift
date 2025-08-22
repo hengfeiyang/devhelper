@@ -151,7 +151,7 @@ struct RegexTestView: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                     } else {
                         Text("Replacement")
@@ -172,7 +172,7 @@ struct RegexTestView: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                     }
                 }

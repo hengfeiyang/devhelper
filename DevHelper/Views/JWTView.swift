@@ -206,7 +206,7 @@ struct JWTView: View {
                     }
                     .padding(5)
                     .frame(maxHeight: .infinity)
-                    .background(Color.gray.opacity(0.1))
+                    .background(AppConstants.lightGrayBackground)
                     .cornerRadius(8)
                     
                     if !encodedJWT.isEmpty {
@@ -356,7 +356,7 @@ struct JWTView: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                     }
                     .frame(maxHeight: .infinity)
@@ -381,7 +381,7 @@ struct JWTView: View {
                         }
                         .padding(5)
                         .frame(maxHeight: .infinity)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                     }
                     .frame(maxHeight: .infinity)
@@ -406,7 +406,7 @@ struct JWTView: View {
                         }
                         .padding(5)
                         .frame(height: 60)
-                        .background(Color.gray.opacity(0.1))
+                        .background(AppConstants.lightGrayBackground)
                         .cornerRadius(8)
                     }
                 }

@@ -129,7 +129,7 @@ struct URLToolsView: View {
                 }
                 .padding(5)
                 .frame(maxHeight: .infinity)
-                .background(Color.gray.opacity(0.1))
+                .background(AppConstants.lightGrayBackground)
                 .cornerRadius(8)
                 
                 Text("\(encodedOutput.count) characters")
@@ -205,7 +205,7 @@ struct URLToolsView: View {
                 }
                 .padding(5)
                 .frame(maxHeight: .infinity)
-                .background(Color.gray.opacity(0.1))
+                .background(AppConstants.lightGrayBackground)
                 .cornerRadius(8)
                 
                 Text("\(decodedOutput.count) characters")
@@ -299,7 +299,7 @@ struct URLToolsView: View {
                                     .font(.system(.body, design: .monospaced))
                                     .padding(.horizontal, 8)
                                     .padding(.vertical, 4)
-                                    .background(Color.gray.opacity(0.1))
+                                    .background(AppConstants.lightGrayBackground)
                                     .cornerRadius(4)
                                 }
                             }
@@ -321,7 +321,7 @@ struct URLToolsView: View {
                             .font(.system(.body, design: .monospaced))
                             .textSelection(.enabled)
                             .padding()
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                         
                         Button(action: {
@@ -363,7 +363,7 @@ struct URLToolsView: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 4)
-        .background(Color.gray.opacity(0.1))
+        .background(AppConstants.lightGrayBackground)
         .cornerRadius(4)
     }
     

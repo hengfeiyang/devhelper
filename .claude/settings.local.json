@@ -12,7 +12,8 @@
       "Bash(curl:*)",
       "Bash(touch:*)",
       "Bash(git log:*)",
-      "Bash(git tag:*)"
+      "Bash(git tag:*)",
+      "mcp__XcodeBuildMCP__build_run_macos"
     ],
     "deny": []
   }

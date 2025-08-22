@@ -54,7 +54,7 @@ struct TimestampConverterView: View {
                             Text("Converted date will appear here")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
-                                .background(Color.gray.opacity(0.1))
+                                .background(AppConstants.lightGrayBackground)
                                 .cornerRadius(8)
                         } else {
                             VStack(alignment: .leading, spacing: 4) {
@@ -62,7 +62,7 @@ struct TimestampConverterView: View {
                                 dateRow("Local Time", getLocalFromResult())
                             }
                             .padding()
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                         }
                     }
@@ -92,7 +92,7 @@ struct TimestampConverterView: View {
                             Text("Converted timestamp will appear here")
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding()
-                                .background(Color.gray.opacity(0.1))
+                                .background(AppConstants.lightGrayBackground)
                                 .cornerRadius(8)
                         } else {
                             VStack(alignment: .leading, spacing: 4) {
@@ -102,7 +102,7 @@ struct TimestampConverterView: View {
                                 timestampRow("Nanoseconds", getNanosecondsFromResult())
                             }
                             .padding()
-                            .background(Color.gray.opacity(0.1))
+                            .background(AppConstants.lightGrayBackground)
                             .cornerRadius(8)
                         }
                     }

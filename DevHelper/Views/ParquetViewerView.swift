@@ -329,7 +329,7 @@ struct ParquetViewerView: View {
         }
         .padding(8)
         .frame(width: columnWidth, alignment: .leading)
-        .background(Color.gray.opacity(0.1))
+        .background(AppConstants.lightGrayBackground)
         .overlay(
             Rectangle()
                 .stroke(Color.gray.opacity(0.3), lineWidth: 0.5)
@@ -440,7 +440,7 @@ struct ParquetViewerView: View {
         }
         .padding(8)
         .frame(width: 150, alignment: .leading)
-        .background(Color.gray.opacity(0.1))
+        .background(AppConstants.lightGrayBackground)
         .overlay(
             Rectangle()
                 .stroke(Color.gray.opacity(0.3), lineWidth: 0.5)

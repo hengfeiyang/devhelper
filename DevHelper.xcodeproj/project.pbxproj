@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9301315A2E4B1C5D00B838C3 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 930131592E4B1C5D00B838C3 /* FirebaseAnalytics */; };
-		930D8A442E3289B900D2DC16 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (Required, ); }; };
-		930D8A452E328B4B00D2DC16 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		9332C0382E589984009E68BE /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9332C0372E589984009E68BE /* CodeMirror-SwiftUI */; };
+		9332C0392E589984009E68BE /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 9332C0372E589984009E68BE /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		935539782E477F9600A1BC3B /* Arrow in Frameworks */ = {isa = PBXBuildFile; productRef = 935539772E477F9600A1BC3B /* Arrow */; };
+		93A6A9212E588B98006A2798 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6A9202E588B98006A2798 /* Constants.swift */; };
 		93C47C912E3312690069B278 /* IPQueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B822A4CAC32A426BA9E4E438123457 /* IPQueryView.swift */; };
 		93C47C932E3312A00069B278 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C47C922E3312A00069B278 /* CodeEditor.swift */; };
 		93F48DE72E442FBE007F279B /* DuckDB in Frameworks */ = {isa = PBXBuildFile; productRef = 93F48DE62E442FBE007F279B /* DuckDB */; };
@@ -44,7 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				930D8A452E328B4B00D2DC16 /* CodeMirror-SwiftUI in Embed Frameworks */,
+				9332C0392E589984009E68BE /* CodeMirror-SwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		93A6A9202E588B98006A2798 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93C47C922E3312A00069B278 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		B822A4CAC32A426BA9E4E438123457 /* IPQueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPQueryView.swift; sourceTree = "<group>"; };
 		D5F4E7F02C5A1B2E00123456 /* DevHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,8 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9332C0382E589984009E68BE /* CodeMirror-SwiftUI in Frameworks */,
 				935539782E477F9600A1BC3B /* Arrow in Frameworks */,
-				930D8A442E3289B900D2DC16 /* CodeMirror-SwiftUI in Frameworks */,
 				9301315A2E4B1C5D00B838C3 /* FirebaseAnalytics in Frameworks */,
 				93F48DE72E442FBE007F279B /* DuckDB in Frameworks */,
 			);
@@ -113,6 +115,7 @@
 		D5F4E7F22C5A1B2E00123456 /* DevHelper */ = {
 			isa = PBXGroup;
 			children = (
+				93A6A9202E588B98006A2798 /* Constants.swift */,
 				D5F4E7F32C5A1B2E00123456 /* DevHelperApp.swift */,
 				D5F4E7F52C5A1B2E00123456 /* ContentView.swift */,
 				D5F4E8132C5A1B3000123456 /* Views */,
@@ -219,10 +222,10 @@
 			);
 			mainGroup = D5F4E7E72C5A1B2E00123456;
 			packageReferences = (
-				930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */,
 				93F48DE52E442FBE007F279B /* XCRemoteSwiftPackageReference "duckdb-swift" */,
 				935539762E477F9600A1BC3B /* XCRemoteSwiftPackageReference "arrow-swift" */,
 				930131582E4B1C5D00B838C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9332C0332E5897DC009E68BE /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */,
 			);
 			productRefGroup = D5F4E7F12C5A1B2E00123456 /* Products */;
 			projectDirPath = "";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93C47C912E3312690069B278 /* IPQueryView.swift in Sources */,
+				93A6A9212E588B98006A2798 /* Constants.swift in Sources */,
 				D5F4E8022C5A1B3000123456 /* TimestampConverterView.swift in Sources */,
 				D5F4E8042C5A1B3000123456 /* UnitConverterView.swift in Sources */,
 				D5F4E8062C5A1B3000123456 /* JSONFormatterView.swift in Sources */,
@@ -429,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp --options=runtime";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devhelper.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -466,7 +470,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.10.0;
+				MARKETING_VERSION = 1.10.1;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp --options=runtime";
 				PRODUCT_BUNDLE_IDENTIFIER = com.devhelper.DevHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,7 +511,7 @@
 				minimumVersion = 12.1.0;
 			};
 		};
-		930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */ = {
+		9332C0332E5897DC009E68BE /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hengfeiyang/CodeMirror-SwiftUI";
 			requirement = {
@@ -539,9 +543,9 @@
 			package = 930131582E4B1C5D00B838C3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		930D8A432E3289B900D2DC16 /* CodeMirror-SwiftUI */ = {
+		9332C0372E589984009E68BE /* CodeMirror-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 930D8A422E3289B900D2DC16 /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */;
+			package = 9332C0332E5897DC009E68BE /* XCRemoteSwiftPackageReference "CodeMirror-SwiftUI" */;
 			productName = "CodeMirror-SwiftUI";
 		};
 		935539772E477F9600A1BC3B /* Arrow */ = {

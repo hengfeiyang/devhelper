@@ -42,7 +42,7 @@ struct TextEditor: NSViewRepresentable {
         // Set background color for proper visibility across macOS versions
         // Use controlBackgroundColor for better contrast on both light and dark modes
         // This ensures the editor is visible even when system background changed to white in macOS 26
-        textView.backgroundColor = NSColor(Color.gray.opacity(0.1))
+        textView.backgroundColor = NSColor(AppConstants.lightGrayBackground)
         
         // Add rounded corners
         scrollView.wantsLayer = true

@@ -23,7 +23,7 @@ struct ContentView: View {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             return "v\(version)"
         }
-        return "v1.2"
+        return "v1.0"
     }
     
     var filteredTools: [ToolType] {
@@ -33,6 +33,12 @@ struct ContentView: View {
             return ToolType.allCases.filter { 
                 $0.title.localizedCaseInsensitiveContains(searchText)
             }
+        }
+    }
+    
+    private func handleSearchSubmit() {
+        if filteredTools.count == 1 {
+            selectedTool = filteredTools[0]
         }
     }
     
@@ -57,10 +63,13 @@ struct ContentView: View {
                         .foregroundColor(.secondary)
                     TextField("Search tools...", text: $searchText)
                         .textFieldStyle(PlainTextFieldStyle())
+                        .onSubmit {
+                            handleSearchSubmit()
+                        }
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(Color(NSColor.controlBackgroundColor))
+                .background(AppConstants.controlBackground)
                 .cornerRadius(10)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
