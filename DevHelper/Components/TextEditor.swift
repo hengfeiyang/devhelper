@@ -39,6 +39,11 @@ struct TextEditor: NSViewRepresentable {
         // Set font to match SwiftUI's system monospaced font
         textView.font = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         
+        // Set background color for proper visibility across macOS versions
+        // Use controlBackgroundColor for better contrast on both light and dark modes
+        // This ensures the editor is visible even when system background changed to white in macOS 26
+        textView.backgroundColor = NSColor(Color.gray.opacity(0.1))
+        
         // Add rounded corners
         scrollView.wantsLayer = true
         scrollView.layer?.cornerRadius = 8
