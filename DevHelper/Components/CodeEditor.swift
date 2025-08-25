@@ -45,9 +45,9 @@ struct CodeEditor: View {
     
     var body: some View {
         CodeView(
-            theme: theme,
             code: $text,
             mode: mode,
+            theme: theme,
             fontSize: fontSize,
             showInvisibleCharacters: showInvisibleCharacters,
             lineWrapping: lineWrapping,
