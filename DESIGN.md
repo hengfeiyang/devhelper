@@ -32,7 +32,7 @@ DevHelper/
 │   │   ├── QRCodeView.swift
 │   │   └── ParquetViewerView.swift
 │   ├── Components/                 # Shared UI components
-│   │   ├── CodeEditor.swift        # CodeMirror integration
+│   │   ├── CodeEditor.swift        # CodeMirror integration & diff editor
 │   │   └── TextEditor.swift        # Custom text editor
 │   ├── Assets.xcassets/            # App icons and assets
 │   ├── Preview Content/            # SwiftUI preview assets
@@ -119,21 +119,25 @@ Each tool follows a consistent pattern:
 - Minify (remove whitespace)
 - Validate with detailed feedback
 - Escape/Unescape for string embedding
-- JSON diff/compare mode with side-by-side comparison
+- JSON diff/compare mode with visual CodeMirror diff editor
 - Syntax error highlighting
+- Real-time syntax highlighting for JSON
 
 **UI Components**:
 - Segmented picker for modes (Format/Minify/Validate/Escape/Diff)
 - Two-panel layout (input/output) for most modes
-- Three-panel layout for diff mode (JSON 1, JSON 2, Differences)
+- Visual diff editor for diff mode with side-by-side JSON comparison
 - Validation status indicator
 - Sample JSON button
+- CodeMirror integration for enhanced editing experience
 
 **Implementation Details**:
 - `JSONSerialization` for parsing and formatting
 - Error handling with descriptive messages
 - Real-time processing with input validation
 - Character count tracking
+- CodeMirror-SwiftUI integration for diff visualization
+- `CodeDiffEditor` component for visual diff comparison
 
 ### 4. Base64 Encode/Decode
 **File**: `Base64View.swift`

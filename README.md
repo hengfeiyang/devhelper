@@ -8,7 +8,7 @@ A native macOS application for developers, containing 14 essential tools commonl
 
 - **Timestamp Converter** - Convert between timestamps and human-readable dates with multiple format support
 - **Unit Converter** - Convert between different units (Data, Time, Length, Weight, Temperature, Area, Volume)
-- **JSON Formatter** - Format, validate, and compare JSON data with diff view
+- **JSON Formatter** - Format, validate, and compare JSON data with visual CodeMirror diff editor
 - **SQL Formatter** - Format and minify SQL queries with syntax validation
 - **HTML Formatter** - Format and minify HTML with proper tag indentation
 - **Base64 Encode/Decode** - Encode and decode Base64 strings
@@ -20,7 +20,6 @@ A native macOS application for developers, containing 14 essential tools commonl
 - **IP Query** - Discover your IP address and query geolocation data for any IP
 - **QR Code** - Generate QR codes with multiple sizes and error correction levels, scan QR codes from images
 - **Parquet Viewer** - Read and explore Parquet / arrow files with schema inspection and data export
-- **JWT encoder/decoder** - Encode and decode JSON web token
 
 ## Key Features
 
@@ -42,7 +41,7 @@ A native macOS application for developers, containing 14 essential tools commonl
 
 ## Version
 
-Current version: 1.10.0
+Current version: 1.10.2
 
 ## Screenshots
 

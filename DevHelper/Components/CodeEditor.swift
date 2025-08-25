@@ -215,3 +215,77 @@ extension CodeEditor {
         )
     }
 }
+
+// Diff Editor for comparing two texts
+struct CodeDiffEditor: View {
+    @Binding var leftContent: String
+    @Binding var rightContent: String
+    let mode: Mode
+    let theme: CodeViewTheme
+    let fontSize: Int
+    let showInvisibleCharacters: Bool
+    let lineWrapping: Bool
+    let readOnly: Bool
+    
+    init(
+        leftContent: Binding<String>,
+        rightContent: Binding<String>,
+        mode: Mode = CodeMode.json.mode(),
+        theme: CodeViewTheme = .devhelperNight,
+        fontSize: Int = 12,
+        showInvisibleCharacters: Bool = false,
+        lineWrapping: Bool = true,
+        readOnly: Bool = false
+    ) {
+        self._leftContent = leftContent
+        self._rightContent = rightContent
+        self.mode = mode
+        self.theme = theme
+        self.fontSize = fontSize
+        self.showInvisibleCharacters = showInvisibleCharacters
+        self.lineWrapping = lineWrapping
+        self.readOnly = readOnly
+    }
+    
+    var body: some View {
+        CodeDiffView(
+            leftContent: $leftContent,
+            rightContent: $rightContent,
+            mode: mode,
+            theme: theme,
+            fontSize: fontSize,
+            showInvisibleCharacters: showInvisibleCharacters,
+            lineWrapping: lineWrapping,
+            readOnly: readOnly
+        )
+        .onLoadSuccess {
+            print("CodeDiffView loaded successfully")
+        }
+        .onContentChange { _ in
+            // Handle content change if needed
+        }
+        .onLoadFail { error in
+            print("CodeDiffView load failed: \(error.localizedDescription)")
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .overlay(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(Color(NSColor.separatorColor), lineWidth: 1)
+        )
+    }
+}
+
+// Convenience initializers for CodeDiffEditor
+extension CodeDiffEditor {
+    // For JSON diff with syntax highlighting
+    static func json(leftContent: Binding<String>, rightContent: Binding<String>, readOnly: Bool = true) -> CodeDiffEditor {
+        CodeDiffEditor(
+            leftContent: leftContent,
+            rightContent: rightContent,
+            mode: CodeMode.json.mode(),
+            theme: .devhelperNight,
+            fontSize: 12,
+            readOnly: readOnly
+        )
+    }
+}
